@@ -2,6 +2,7 @@
 
 <p>Simple crud operations app using Redux as state manegement</p>
 <p>Create, View, Update and Delete users</p>
+
 - To add user fill form data then click Add
 - To edit user click on the (pen) icon of the desired user, once clicked user data will be filled in the form to be editted. Once finsihed click on Add button
 - To remove user click on (cross) icon of the desired user
