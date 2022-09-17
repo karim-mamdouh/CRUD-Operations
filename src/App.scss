@@ -1,0 +1,37 @@
+@import "./styles/colors.module";
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+
+  .container {
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    flex-grow: 1;
+    border-radius: 20px;
+    padding: 30px 0;
+  }
+  .crud {
+    padding: 40px 0 20px 0;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $blue-color;
+  }
+}
+@media (min-width: "992px") {
+  main {
+    .crud {
+      flex-direction: row;
+    }
+  }
+}

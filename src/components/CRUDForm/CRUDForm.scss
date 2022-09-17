@@ -1,0 +1,42 @@
+@import "../../styles/colors.module";
+
+.crud-form {
+  width: 100%;
+  padding: 20px 30px;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid $blue-color;
+  }
+  &__button:hover,
+  &__button:focus-visible {
+    background-color: $blue-color;
+    color: white;
+    outline: none;
+  }
+  &__actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: $blue-color;
+  }
+  &__error {
+    color: $red-color;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: "992px") {
+  .crud-form {
+    width: 30%;
+  }
+}

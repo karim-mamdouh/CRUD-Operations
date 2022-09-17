@@ -1,0 +1,19 @@
+@import "../../styles/colors.module";
+
+input:focus,
+input:focus-visible {
+  box-shadow: 0 0 0 0.2rem $blue-color;
+  border-color: $blue-color !important;
+  outline: none;
+}
+input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid $blue-color;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+label {
+  color: $grey-color;
+}

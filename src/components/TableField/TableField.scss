@@ -1,0 +1,41 @@
+@import "../../styles/colors.module";
+
+.data-table__row {
+  td {
+    background-color: #f1f0f0;
+    height: 40px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  td:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+  td:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    margin: 0 15px;
+    .trash-icon {
+      color: $red-color;
+    }
+    .edit-icon {
+      color: $orange-color;
+    }
+    .trash-icon,
+    .edit-icon {
+      font-size: 1.4rem;
+      margin-top: 10px;
+    }
+  }
+  button:hover {
+    cursor: pointer;
+  }
+}
+.data-table__row:nth-child(2n) {
+  td {
+    background-color: transparent;
+  }
+}

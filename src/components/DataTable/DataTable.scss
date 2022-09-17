@@ -1,0 +1,24 @@
+@import "../../styles/colors.module";
+
+.data-table {
+  margin-top: 30px;
+  width: 100%;
+  padding: 0 30px;
+  overflow-x: scroll;
+  table {
+    width: 100%;
+  }
+  &__header-cell {
+    padding: 0 10px;
+    font-size: 1.1rem;
+    color: $grey-color;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: "992px") {
+  .data-table {
+    width: 70%;
+    margin-top: 0;
+  }
+}
