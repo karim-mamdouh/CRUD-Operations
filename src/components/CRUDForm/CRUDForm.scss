@@ -1,4 +1,4 @@
-@import "../../styles/colors.module";
+@import "../../assets/scss/colors.module";
 
 .crud-form {
   width: 100%;
@@ -6,19 +6,6 @@
   form {
     display: flex;
     flex-direction: column;
-  }
-  &__button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 10px;
-    background-color: transparent;
-    border: 2px solid $blue-color;
-  }
-  &__button:hover,
-  &__button:focus-visible {
-    background-color: $blue-color;
-    color: white;
-    outline: none;
   }
   &__actions {
     margin-top: 20px;
@@ -35,6 +22,7 @@
     margin-bottom: 15px;
   }
 }
+
 @media (min-width: "992px") {
   .crud-form {
     width: 30%;

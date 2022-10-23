@@ -1,10 +1,8 @@
-//React
-import React from "react";
 //Scss styling file
 import "./DataTable.scss";
 //Redux store
 import { useSelector, useDispatch } from "react-redux";
-import { removeUser, setEditID } from "../../redux store/features/dataSlice";
+import { removeUser, setEditID } from "../../config/redux/features/dataSlice";
 //Components
 import TableField from "../TableField/TableField";
 //Icons
@@ -15,8 +13,10 @@ import {
   faPhone,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const DataTable = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch(); //Variable to dispatch store actions
   const data = useSelector((state) => state.userData.data); //Variable for accessing data array in store
   const activeUser = useSelector((state) => state.userData.editID); //Variable for accessing editId variable in store
@@ -39,22 +39,23 @@ const DataTable = () => {
           <tr className="data-table__header">
             {/* Index header */}
             <th className="data-table__header-cell">
-              <FontAwesomeIcon icon={faList} /> &nbsp; Index
+              <FontAwesomeIcon icon={faList} /> &nbsp; {t("table.index")}
             </th>
             {/* First name header */}
             <th className="data-table__header-cell">
-              <FontAwesomeIcon icon={faUser} /> &nbsp; First Name
+              <FontAwesomeIcon icon={faUser} /> &nbsp; {t("table.firstName")}
             </th>
             {/* Last name header */}
             <th className="data-table__header-cell">
-              <FontAwesomeIcon icon={faUser} /> &nbsp; Last Name
+              <FontAwesomeIcon icon={faUser} /> &nbsp; {t("table.lastName")}
             </th>
             {/* Phone header */}
             <th className="data-table__header-cell">
-              <FontAwesomeIcon icon={faPhone} /> &nbsp; Phone
+              <FontAwesomeIcon icon={faPhone} /> &nbsp; {t("table.phone")}
             </th>
             <th className="data-table__header-cell">
-              <FontAwesomeIcon icon={faPenToSquare} /> &nbsp; Actions
+              <FontAwesomeIcon icon={faPenToSquare} /> &nbsp;
+              {t("table.actions")}
             </th>
           </tr>
         </thead>

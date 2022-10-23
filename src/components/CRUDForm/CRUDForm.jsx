@@ -1,6 +1,7 @@
 //React
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 //Scss styling file
 import "./CRUDForm.scss";
 //Redux store
@@ -9,11 +10,12 @@ import {
   addUser,
   modifyUser,
   setEditID,
-} from "../../redux store/features/dataSlice";
+} from "../../config/redux/features/dataSlice";
 //Components
 import FormInput from "../FormInput/FormInput";
 
 const CRUDForm = () => {
+  const { t } = useTranslation("translation", { keyPrefix: "form" });
   //Object holding user data to be modified
   let [editUser, setEditUser] = useState();
   //User id to be editted, used to detect changes
@@ -51,71 +53,75 @@ const CRUDForm = () => {
       setValue("Phone", temp["Phone"]);
     }
   }, [editID]);
+
   return (
     <div className="crud-form">
       <form onSubmit={handleSubmit(formSubmit)}>
-        <h2 className="crud-form__title">Add/Modify User</h2>
+        <h2 className="crud-form__title">{t("title")}</h2>
         {/* First name input */}
         <FormInput
           type="text"
-          placeholder="First Name"
           label="First Name"
+          placeholder={t("labelFirstName")}
+          labelText={t("labelFirstName")}
           validations={{ required: true }}
           register={register}
           error={errors.Name}
         >
           {/* Field errors */}
           {errors["First Name"]?.type === "required" && (
-            <p className="crud-form__error">This field is required</p>
+            <p className="crud-form__error">{t("errors.required")}</p>
           )}
         </FormInput>
         {/* Last name input */}
         <FormInput
           type="text"
-          placeholder="Last Name"
           label="Last Name"
+          placeholder={t("labelLastName")}
+          labelText={t("labelLastName")}
           validations={{ required: true }}
           register={register}
           error={errors.Name}
         >
           {/* Field errors */}
           {errors["Last Name"]?.type === "required" && (
-            <p className="crud-form__error">This field is required</p>
+            <p className="crud-form__error">{t("errors.required")}</p>
           )}
         </FormInput>
         {/* Phone input */}
         <FormInput
           type="tel"
-          placeholder="01234567890"
           label="Phone"
+          placeholder="01234567890"
+          labelText={t("labelPhone")}
           validations={{ required: true, minLength: 11, maxLength: 11 }}
           register={register}
           error={errors.Name}
         >
           {/* Field errors */}
           {errors["Phone"]?.type === "required" && (
-            <p className="crud-form__error">This field is required</p>
+            <p className="crud-form__error">{t("errors.required")}</p>
           )}
           {(errors["Phone"]?.type === "minLength" ||
             errors["Phone"]?.type === "maxLength") && (
-            <p className="crud-form__error">Length should be 11 digits</p>
+            <p className="crud-form__error">{t("errors.phoneLength")}</p>
           )}
         </FormInput>
         {/* Actions buttons */}
         <div className="crud-form__actions">
           {/* Submit button */}
-          <button type="submit" className="crud-form__button">
-            Add
+          <button type="submit" className="btn">
+            {t("buttonAdd")}
           </button>
           {/* Clear button */}
           <button
             type="button"
-            className="crud-form__button"
+            className="btn"
             onClick={() => {
               reset();
             }}
           >
-            Clear
+            {t("buttonClear")}
           </button>
         </div>
       </form>

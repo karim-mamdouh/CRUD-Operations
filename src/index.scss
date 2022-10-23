@@ -1,4 +1,4 @@
-@import "./styles/colors.module";
+@import "./assets/scss/colors.module";
 
 * {
   box-sizing: border-box;
@@ -20,4 +20,26 @@ body {
   background: $gradient-color;
   min-height: 100vh;
   font-family: "Cairo", sans-serif;
+}
+
+html[lang="ar"] {
+  direction: rtl;
+}
+
+html[lang="en"] {
+  direction: ltr;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px solid $blue-color;
+}
+.btn:hover,
+.btn:focus-visible {
+  background-color: $blue-color;
+  color: white;
+  outline: none;
 }

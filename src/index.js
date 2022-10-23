@@ -8,13 +8,16 @@ import "./index.scss";
 import App from "./App";
 //Redux store
 import { Provider } from "react-redux";
-import store from "./redux store/store";
+import "./config/localization/i18n";
+import store from "./config/redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <React.Suspense fallback="Loading..">
+        <App />
+      </React.Suspense>
     </Provider>
   </React.StrictMode>
 );
